@@ -207,6 +207,9 @@ module.exports.getRandomPray = function(request, res) {
 				res.send(404);
 				return;
 			}
+			if(record && record.value){
+				record = record.value;
+			}
 
 			console.log("Versículo " + record);
 
