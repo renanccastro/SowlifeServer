@@ -31,13 +31,13 @@ var credentials = {
 	cert: certificate
 };
 
-// var port = Number(process.env.PORT || 5000);
-// var secureServer = https.createServer(credentials, app).listen(port, function() {
-// 	console.log("HTTPS Listening on " + port);
-// });
-var port = Number(process.env.PORT || 3450);
-var unsecureServer = http.createServer(app).listen(port, function() {
-	console.log("HTTP Listening on " + port);
+var port = Number(process.env.PORT || 5000);
+var secureServer = https.createServer(credentials, app).listen(port, function() {
+	console.log("HTTPS Listening on " + port);
+});
+var portHttp = Number(process.env.PORT || 3450);
+var unsecureServer = http.createServer(app).listen(portHttp, function() {
+	console.log("HTTP Listening on " + portHttp);
 });
 
 
